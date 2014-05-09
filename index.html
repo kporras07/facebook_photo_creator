@@ -30,9 +30,8 @@
                   <span class="btn btn-success glyphicon glyphicon-plus">
                       <input type="file" class="btn btn-file fileupload" id="fileupload" title="Agregar Imagen">
                   </span>
-                  <span class="btn btn-success glyphicon glyphicon-plus">
-                      <button id="addtext" title="Add Text" class="btn btn-success">Agregar Texto</button>
-                  </span>
+                  <span class="btn btn-success glyphicon glyphicon-plus" id="addtext">Agregar Texto</span>
+                  <span id="save" class="btn btn-success glyphicon glyphicon-floppy-save">Guardar</span>
               </div>
               <div id="clear-buttons" class="btn-group">
                   <span id="remove" class="btn glyphicon glyphicon-trash btn-danger remove" description="Remover Seleccionado"></span>
@@ -45,10 +44,10 @@
               <span class="glyphicon glyphicon-th-large btn btn-default" id="image_crop">Recortar</span>
               <span class="glyphicon glyphicon-resize-horizontal btn btn-default" id="image_fliph"></span>
               <span class="glyphicon glyphicon-resize-vertical btn btn-default" id="image_flipv"></span>
-              <span class="glyphicon glyphicon-bold btn tt ct btn-default" id="text_bold" disabled="disabled"></span>
-              <span class="glyphicon glyphicon-italic btn tt ct btn-default" id="text_italic" disabled="disabled"></span>
-              <span class="glyphicon glyphicon-underline btn tt ct btn-default" id="text_underline" disabled="disabled" style="font-family:'Times New Roman', Times; font-weight:bold;font-size:18px">U</span>
-              <span class="glyphicon glyphicon-shadow btn tt ct btn-default" id="text_shadow" disabled="disabled">Sombra</span>
+              <span class="glyphicon glyphicon-bold btn tt ot btn-default" id="text_bold" disabled="disabled"></span>
+              <span class="glyphicon glyphicon-italic btn tt ot btn-default" id="text_italic" disabled="disabled"></span>
+              <span class="glyphicon glyphicon-underline btn tt ot btn-default" id="text_underline" disabled="disabled" style="font-family:'Times New Roman', Times; font-weight:bold;font-size:18px">U</span>
+              <span class="glyphicon glyphicon-shadow btn tt ot btn-default" id="text_shadow" disabled="disabled">Sombra</span>
               <input type="text" size="12" class="tt ot input-text" name="color2" id="text_text" data-original-title="  Texto  " disabled="disabled">
               <select class="tt ot" name="" id="text_font" data-original-title="Font Family" disabled="disabled"> 
                   <option style="font-family:'Arial'">Arial</option>
@@ -81,13 +80,13 @@
                       <h3>Descargar</h3>
                       <div id="toolbar-download" class="btn-toolbar">
                           <div id="group-download" class="btn-group">
-                              <span class="btn btn-success glyphicon glyphicon-picture" id="d1">Portada</span>
-                              <span class="btn btn-success glyphicon glyphicon-user" id="d2">Perfil</span>
-                              <span class="btn btn-success glyphicon glyphicon-film" id="d3">Ambas</span>
+                              <span class="btn btn-primary glyphicon glyphicon-picture" id="d1">Portada</span>
+                              <span class="btn btn-primary glyphicon glyphicon-user" id="d2">Perfil</span>
+                              <span class="btn btn-primary glyphicon glyphicon-film" id="d3">Ambas</span>
                           </div>
                           <div id="group-type" class="btn-group">
-                              <span class="btn btn-success glyphicon glyphicon-user" id="s1">Personal</span>
-                              <span class="btn btn-success glyphicon glyphicon-flag" id="s2">Página</span>
+                              <span class="btn btn-primary glyphicon glyphicon-user st active" id="s1">Personal</span>
+                              <span class="btn btn-primary glyphicon glyphicon-flag st" id="s2">Página</span>
                           </div>
                       </div>
                   </div>
@@ -97,7 +96,7 @@
               </div>
           </div>
           <div class="preview_wrap">
-              <h4>Arrastre para ajustar las capas</h4>
+              <h3>Arrastre para ajustar las capas</h3>
               <ul id="object_layers" class="ui-sortable">
               </ul>
           </div>

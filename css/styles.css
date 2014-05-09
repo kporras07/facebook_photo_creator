@@ -1,6 +1,5 @@
 .toolbars-set {
     width: 100%;
-    //background: #000;
     height: 50px;
     padding: 5px 10px;
 }
@@ -13,20 +12,20 @@
 .fileupload:hover {
     color: #FFF;
 }
-.file-input-wrapper, #addtext {
-    margin-left: -12px;
-    margin-top: -7px;
+#addtext, #save, .btn.glyphicon.glyphicon-trash.btn-danger.remove, .btn.btn-danger.clear-all {
+    height: 33px;
 }
-#addtext {
-    border-color: #5CB85C;
+.file-input-wrapper {
+    height: 28px;
+    overflow: hidden;
+    margin-left: -11px;
+    margin-top: -12px;
 }
-.btn.glyphicon.glyphicon-trash.btn-danger.remove {
-    height: 42px;
-    padding-top: 13px;
+a.file-input-wrapper:hover {
+    color: #FFF;
 }
 .btn.btn-danger.clear-all {
-    height: 42px;
-    margin-top: 1px;
+    margin-left: 5px;
 }
 
 #toolbar-main {
@@ -44,6 +43,12 @@
     padding-top: 3px;
     vertical-align: bottom;
 }
+#addtext.glyphicon-plus:before, .file-input-wrapper.glyphicon-plus:before {
+    content: "+ ";
+}
+#save.glyphicon-floppy-save:before {
+    content: " ";
+}
 #image_crop.glyphicon-th-large:before {
     content: " ";
 }
@@ -59,12 +64,15 @@
     cursor: not-allowed;
 }
 .download-toolbar, .timeline_canvas, .preview_wrap {
-    margin-top: 2em;
+    margin: 1.5em;
     padding: 1em 3.2em;
 }
 #toolbar-download {
     clear: both;
     background: linear-gradient(to bottom, #D4D4D4 0%, #E1E1E1 40%, #EEE 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+#toolbar-download span {
+    margin-right: 3px;
 }
 #d1.glyphicon-picture:before {
     content: " ";
@@ -84,7 +92,36 @@
     margin-top: 4em;
 }
 .preview_wrap {
-    margin-top: 0px;
+    margin: 1.5em auto;
     clear: both;
     display: block;
+    text-align: center;
+    width: 60%;
+}
+#object_layers {
+    clear: both;
+    display: block;
+    list-style-type: none;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 70px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+
+#object_layers li {
+    background-image: url("../img/layerbg.png");
+    background-repeat: repeat;
+    border: 1px solid #CCCCCC;
+    float: left;
+    font-size: 4em;
+    height: 50px;
+    margin: 3px 3px 3px 0;
+    text-align: center;
+    width: 110px;
+}
+#object_layers {
+    list-style-type: none;
 }
