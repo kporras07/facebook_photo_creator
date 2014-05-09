@@ -22,8 +22,6 @@ textAlign: "center",
 fill:"#FFFFFF",
 textShadow: 'rgba(0,0,0,0.2) 2px 2px 10px',
 });
-console.log(c);
-console.log(textSample);
 c.add(textSample);
 reloadThumbs();
 
@@ -425,7 +423,7 @@ var cropObject = null;
 var actObj;
 $('#image_crop').click(function(){
 	$(this).attr('disabled','disabled');
-	$('.ct').attr('disabled','disabled');
+	$('#toolbar-main .btn, #toolbar-download .btn, #image_fliph, #image_flipv').attr('disabled','disabled');
 	$("#object_layers").sortable('disable');
 	actObj = c.getActiveObject();
 	cropStart();
@@ -513,7 +511,7 @@ function crop(){
 }
 function cropFinish(){
 	$('#crop_control').hide();
-	$('.ct').removeAttr('disabled');
+	$('#toolbar-main .btn, #toolbar-download .btn, #image_fliph, #image_flipv').removeAttr('disabled');
 	$("#object_layers").sortable('enable');
 	cropping = false;
 	c.remove(cropObject);

@@ -41,9 +41,9 @@
               </div>
           </div>
           <div id="toolbar-text" class="btn-toolbar" role="toolbar">
-              <span class="glyphicon glyphicon-th-large btn btn-default" id="image_crop">Recortar</span>
-              <span class="glyphicon glyphicon-resize-horizontal btn btn-default" id="image_fliph"></span>
-              <span class="glyphicon glyphicon-resize-vertical btn btn-default" id="image_flipv"></span>
+              <span class="glyphicon glyphicon-th-large btn btn-default oi" id="image_crop" disabled="disabled">Recortar</span>
+              <span class="glyphicon glyphicon-resize-horizontal btn btn-default oi ot" id="image_fliph"></span>
+              <span class="glyphicon glyphicon-resize-vertical btn btn-default oi ot" id="image_flipv"></span>
               <span class="glyphicon glyphicon-bold btn tt ot btn-default" id="text_bold" disabled="disabled"></span>
               <span class="glyphicon glyphicon-italic btn tt ot btn-default" id="text_italic" disabled="disabled"></span>
               <span class="glyphicon glyphicon-underline btn tt ot btn-default" id="text_underline" disabled="disabled" style="font-family:'Times New Roman', Times; font-weight:bold;font-size:18px">U</span>
@@ -74,30 +74,26 @@
           </div>
       </div>
       <div class="preview_timeline">
-          <div class="maindiv">
-              <div class="control_dload">
-                  <div class="toolbars-set app_toolbar download-toolbar inner-cover_1">
-                      <h3>Descargar</h3>
-                      <div id="toolbar-download" class="btn-toolbar">
-                          <div id="group-download" class="btn-group">
-                              <span class="btn btn-primary glyphicon glyphicon-picture" id="d1">Portada</span>
-                              <span class="btn btn-primary glyphicon glyphicon-user" id="d2">Perfil</span>
-                              <span class="btn btn-primary glyphicon glyphicon-film" id="d3">Ambas</span>
-                          </div>
-                          <div id="group-type" class="btn-group">
-                              <span class="btn btn-primary glyphicon glyphicon-user st active" id="s1">Personal</span>
-                              <span class="btn btn-primary glyphicon glyphicon-flag st" id="s2">Página</span>
-                          </div>
-                      </div>
+          <div class="toolbars-set app_toolbar download-toolbar inner-cover_1">
+              <h3 class="download-text">Descargar</h3>
+              <div id="toolbar-download" class="btn-toolbar">
+                  <div id="group-download" class="btn-group">
+                      <span class="btn btn-primary glyphicon glyphicon-picture" id="d1">Portada</span>
+                      <span class="btn btn-primary glyphicon glyphicon-user" id="d2">Perfil</span>
+                      <span class="btn btn-primary glyphicon glyphicon-film" id="d3">Ambas</span>
                   </div>
-                  <div class="timeline_canvas">
-                          <canvas height="397" width="851" id="cc" class="lower-canvas" style="position: absolute; width: 851px; height: 397px; left: 0px; top: 0px; -moz-user-select: none;"></canvas>
-                      </div>
-                      <div id="crop_control">
-                          <button id="crop_ok" class="btn btn-primary tt glyphicon glyphicon-ok" type="button" data-original-title="Crop"></button>
-                          <button id="crop_cancel" class="btn btn-inverse tt glyphicon glyphicon-remove" type="button" data-original-title="Cancel"></button>
-                      </div>
+                  <div id="group-type" class="btn-group">
+                      <span class="btn btn-primary glyphicon glyphicon-user st active" id="s1">Personal</span>
+                      <span class="btn btn-primary glyphicon glyphicon-flag st" id="s2">Página</span>
+                  </div>
               </div>
+          </div>
+          <div class="timeline_canvas">
+              <canvas height="397" width="851" id="cc" class="lower-canvas" style="position: absolute; width: 851px; height: 397px; left: 0px; top: 0px; -moz-user-select: none;"></canvas>
+          </div>
+          <div id="crop_control">
+              <button id="crop_ok" class="btn btn-primary tt glyphicon glyphicon-ok" type="button" data-original-title="Crop"></button>
+              <button id="crop_cancel" class="btn btn-inverse tt glyphicon glyphicon-remove" type="button" data-original-title="Cancel"></button>
           </div>
           <div class="preview_wrap">
               <h3>Arrastre para ajustar las capas</h3>
