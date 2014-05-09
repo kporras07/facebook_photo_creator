@@ -9,20 +9,25 @@ function getIndex(object){
 
 var cropping = false;
 var c = new fabric.Canvas('cc');
+if(window.localStorage['fpc-canvas']){
+    c.loadFromJSON(window.localStorage['fpc-canvas']);
+}
+else{
+    var textSample = new fabric.Text("Add or Drop Image",{
+        fontFamily: "Impact",
+        left: 425,
+        top: 140,
+        fontSize: 60,
+        textAlign: "center",
+        fill:"#FFFFFF",
+        textShadow: 'rgba(0,0,0,0.2) 2px 2px 10px',
+    });
+    c.add(textSample);
+}
 var start, set = 'personal';
 c.setOverlayImage('img/foreground-personal.png', c.renderAll.bind(c));
 c.backgroundColor = 'rgba(59,89,152,1)';
 
-var textSample = new fabric.Text("Add or Drop Image",{
-fontFamily: "Impact",
-left: 425,
-top: 140,
-fontSize: 60,
-textAlign: "center",
-fill:"#FFFFFF",
-textShadow: 'rgba(0,0,0,0.2) 2px 2px 10px',
-});
-c.add(textSample);
 reloadThumbs();
 
 $(function() {
@@ -131,7 +136,9 @@ $("#object_layers").sortable({ change: function(event, ui) {
 $("#clear").click(function(){
 	if(confirm("Are you sure to clear all including saved data?")){
 		c.clear();
-		$.ajax({type: "POST",url: "ajax.php",data: { a: "clear"}});
+        if(window.localStorage['fpc-canvas']){
+            window.localStorage.removeItem('fpc-canvas');
+        }
 		reloadThumbs();
 	}
 });
@@ -265,10 +272,23 @@ $('#s3').click(function(){
 	$(this).addClass('active');
 	set = 'gplus';
 });
-
+function supports_html5_storage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
 $("#save").click(function(){
 		var sve = JSON.stringify(c);
-		$.ajax({type: "POST",url: "ajax.php",data: { d: sve}}).done(function( msg ) {alert( "Data Saved!");});
+        if(supports_html5_storage()){
+            window.localStorage['fpc-canvas'] = sve;
+            alert('Guardado');
+        }
+        else{
+            alert('Tu navegador no soporta la funcionalidad de almacenamiento de datos.');
+        }
+//		$.ajax({type: "POST",url: "ajax.php",data: { d: sve}}).done(function( msg ) {alert( "Data Saved!");});
 });
 		
 		
