@@ -300,6 +300,12 @@ function dload(t){
 
 	var overlayImage = c.overlayImage;
 	c.overlayImage = null;
+    console.log('t');
+    console.log(t);
+    console.log('set');
+    console.log(set);
+    console.log('png');
+    console.log(c.toDataURL('png'));
 	$('#download #type').val(t);
 	$('#download #set').val(set);
 	$('#download #img').val(c.toDataURL('png'));

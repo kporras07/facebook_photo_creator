@@ -8,3 +8,6 @@ $(document).ready(function(){
     span.children('a').addClass('glyphicon-plus');
     $('#crop_control').hide();
 });
+$(window).load(function(){
+    reloadThumbs();
+});
