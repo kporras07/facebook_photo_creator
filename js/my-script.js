@@ -6,4 +6,5 @@ $(document).ready(function(){
     span.removeClass('glyphicon-plus');
     span.children('a').addClass('glyphicon');
     span.children('a').addClass('glyphicon-plus');
+    $('#crop_control').hide();
 });

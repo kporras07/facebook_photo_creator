@@ -98,6 +98,14 @@ a.file-input-wrapper:hover {
     text-align: center;
     width: 60%;
 }
+
+#crop_control {
+    display: block;
+    float: right;
+    position: relative;
+    right: 5%;
+    bottom: 150%;
+}
 #object_layers {
     clear: both;
     display: block;
