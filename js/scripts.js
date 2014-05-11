@@ -213,7 +213,6 @@ $('#text_text').bind('keyup change',function(){
 
 		
 $('#image_fliph').click(function(){
-    console.log(c);
 	var activeObject = c.getActiveObject();
 
 	if(activeObject !== null){
@@ -300,12 +299,6 @@ function dload(t){
 
 	var overlayImage = c.overlayImage;
 	c.overlayImage = null;
-    console.log('t');
-    console.log(t);
-    console.log('set');
-    console.log(set);
-    console.log('png');
-    console.log(c.toDataURL('png'));
 	$('#download #type').val(t);
 	$('#download #set').val(set);
 	$('#download #img').val(c.toDataURL('png'));
@@ -499,7 +492,6 @@ function cropStart(){
 	var activeObject = actObj;
 	var d = {left:450,top:150,width:300,height:200};
 
-	console.log(d);
 
 	cropObject = new Crop({ left: d.left, top: d.top, fill: 'rgba(255,255,255,0)', width: d.width, height: d.height });
 	c.add(cropObject);
