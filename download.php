@@ -37,14 +37,28 @@ elseif($type == 'cover'){
     readFile($filename);
 }
 elseif($type == 'all'){
+    $filename_profile = generatePicture($filename, 'profile', $picture_data);
+    $filename_cover = generatePicture($filename, 'cover', $picture_data);
+    $destination = 'files/facebook_pictures_' . uniqid() . '.zip';
+    $files = array($filename_profile, $filename_cover);
+    if(!create_zip($files, $destination, TRUE)){
+        die('Error creando el zip');
+    }
+    else{
+        setZipHeaders($destination);
+        readFile($destination);
+    }
+
 }
 else{
     die('Error');
 }
 
 // Output the actual image data
-echo $content;
-die;
+/*
+ *echo $content;
+ *die;
+ */
 }
 else{
     die('Error de escritura en archivo temporal');
@@ -86,6 +100,72 @@ function setPictureHeaders($filename){
     // force the browser to display the save dialog. 
     header("Content-Disposition: attachment; filename=$filename;");
     header("Content-Transfer-Encoding: binary");
+}
+
+function setZipHeaders($filename){
+    // Output the correct HTTP headers (may add more if you require them)
+    // fix for IE catching or PHP bug issue
+    header("Pragma: public");
+    header("Expires: 0"); // set expiration time
+    header("Cache-Control: must-revalidate, post-check=0, pre-check=0"); 
+    // browser must download file from server instead of cache
+
+    header('Content-Length: ' . filesize($filename));
+    // force download dialog
+    header("Content-Type: application/force-download");
+    header("Content-Type: application/octet-stream");
+    header("Content-Type: application/download");
+
+    // use the Content-Disposition header to supply a recommended filename and 
+    // force the browser to display the save dialog. 
+    header("Content-Disposition: attachment; filename=$filename;");
+    header("Content-Transfer-Encoding: binary");
+}
+/* creates a compressed zip file */
+function create_zip($files = array(),$destination = '',$overwrite = false) {
+    //if the zip file already exists and overwrite is false, return false
+    if(file_exists($destination) && !$overwrite) {
+error_log('DIE 3');
+        return false;
+    }
+    //vars
+    $valid_files = array();
+    //if files were passed in...
+    if(is_array($files)) {
+        //cycle through each file
+        foreach($files as $file) {
+            //make sure the file exists
+            if(file_exists($file)) {
+                $valid_files[] = $file;
+            }
+        }
+    }
+    //if we have good files...
+    if(count($valid_files)) {
+        //create the archive
+        $zip = new ZipArchive();
+        if ($zip->open($destination, $overwrite ? ZIPARCHIVE::OVERWRITE : ZIPARCHIVE::CREATE) !== true) {
+error_log('DIE 1');
+            return false;
+        }
+        //add the files
+        foreach($valid_files as $file) {
+            $zip->addFile($file,$file);
+        }
+        //debug
+        //echo 'The zip archive contains ',$zip->numFiles,' files with a status of ',$zip->status;
+
+        //close the zip -- done!
+        $zip->close();
+
+        //check to make sure the file exists
+        return file_exists($destination);
+    }
+    else
+    {
+error_log('DIE 2');
+        return false;
+    }
 }
 
 ?>

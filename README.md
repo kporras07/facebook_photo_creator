@@ -9,3 +9,5 @@ A folder named files with write permissions for server user is needed for correc
 
 Put in default/images the default images you want to appear in the application
 Put in default/strings.txt one per line the default texts you want to appear in the application
+
+For "Both" functionality correctly work; zip extension must be enabled in PHP
