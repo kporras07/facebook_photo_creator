@@ -151,3 +151,25 @@ a.file-input-wrapper:hover {
         top: 10%;
     }
 }
+.predefined-content {
+    display: block;
+    float: left;
+}
+.predefined-image {
+    width: 13em;;
+    height: auto;
+    cursor: pointer;
+}
+.predefined-texts {
+    margin-top: 1.5em;
+}
+.predefined-text {
+    display: block;
+    float: left;
+    width: 13em;
+    height: 3em;
+    cursor: pointer;
+    border: solid 1px;
+    text-align: center;
+    padding: .125em;
+}

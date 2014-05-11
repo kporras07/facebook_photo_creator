@@ -95,6 +95,39 @@
               <button id="crop_ok" class="btn btn-primary tt glyphicon glyphicon-ok" type="button" data-original-title="Crop"></button>
               <button id="crop_cancel" class="btn btn-inverse tt glyphicon glyphicon-remove" type="button" data-original-title="Cancel"></button>
           </div>
+          <div class="predefined-content">
+            <h3 class="text-center">Haga click sobre una imagen o un texto para añadirlo al área de trabajo</h3>
+              <div class="predefined-images">
+<?php
+$dir = 'default/images/';
+$files = scandir($dir);
+$array = array();
+foreach($files as $file)
+{
+    if(is_file($dir.$file)){
+        $image = $dir.$file;
+        $image_data = base64_encode(file_get_contents($image));
+        $dataUri = 'data: '.mime_content_type($image).';base64,'.$image_data;
+        print '<img class="predefined-image" src="' . $image .'" data-datauri="' . $dataUri . '"/>';
+    }
+}
+?>
+              </div>
+              <div class="predefined-texts">
+<?php
+$handle = fopen("default/strings.txt", "r");
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        $line = substr($line, 0, -1);
+        print '<span class="predefined-text" data-text="' . $line . '">' . $line . '</span>';
+;
+    }
+} else {
+} 
+fclose($handle);
+?>
+              </div>
+          </div>
           <div class="preview_wrap">
               <h3>Arrastre para ajustar las capas</h3>
               <ul id="object_layers" class="ui-sortable">

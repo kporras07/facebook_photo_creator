@@ -456,6 +456,39 @@ $('#image_crop').click(function(){
 
 	return false;
 });
+$('.predefined-text').click(function(){
+    var textObj = new fabric.Text($(this).attr('data-text'), {
+        fontFamily: 'Arial',
+        left: 425,
+        top: 150,
+        fontSize: 60,
+        textAlign: "center",
+        fill:"#FFFFFF",
+        textShadow: 'rgba(0,0,0,0.3) 2px 2px 10px',
+    });
+    textObj.setActive(true);
+    c.add(textObj);
+    reloadThumbs(); 
+});
+$('.predefined-image').click(function(){
+    var dataURL = $(this).attr('data-datauri');
+    fabric.Image.fromURL(dataURL, function(oImg) {
+        if (oImg.getWidth() > 800) {
+            oImg.scaleToWidth(800);
+        }
+        if (oImg.getHeight() > 400) {
+            oImg.scaleToHeight(400);
+        }
+        c.add(oImg);
+        oImg.setActive(true);
+        c.centerObjectH(oImg).centerObjectV(oImg);
+        oImg.setCoords();
+        c.renderAll();
+        var image = $('<image width="120" height="55" />').attr('src',dataURL);
+        $( "<li/>" ).prependTo( "#object_layers" ).append(image);
+        reloadThumbs();
+    }); 
+});
 function cropStart(){
 	cropping = true;
 
