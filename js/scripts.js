@@ -471,7 +471,7 @@ $('.predefined-text').click(function(){
     reloadThumbs(); 
 });
 $('.predefined-image').click(function(){
-    var dataURL = $(this).attr('data-datauri');
+    var dataURL = $(this).attr('src');
     fabric.Image.fromURL(dataURL, function(oImg) {
         if (oImg.getWidth() > 800) {
             oImg.scaleToWidth(800);

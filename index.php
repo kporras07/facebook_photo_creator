@@ -1,3 +1,17 @@
+<?php
+$dir = 'default/images/';
+$files = scandir($dir);
+$images = array();
+foreach($files as $file)
+{
+    if(is_file($dir.$file)){
+        $image = $dir.$file;
+        $image_data = base64_encode(file_get_contents($image));
+        $dataUri = 'data: '.mime_content_type($image).';base64,'.$image_data;
+        $images[] = $dataUri;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -99,17 +113,8 @@
             <h3 class="text-center">Haga click sobre una imagen o un texto para añadirlo al área de trabajo</h3>
               <div class="predefined-images">
 <?php
-$dir = 'default/images/';
-$files = scandir($dir);
-$array = array();
-foreach($files as $file)
-{
-    if(is_file($dir.$file)){
-        $image = $dir.$file;
-        $image_data = base64_encode(file_get_contents($image));
-        $dataUri = 'data: '.mime_content_type($image).';base64,'.$image_data;
-        print '<img class="predefined-image" src="' . $image .'" data-datauri="' . $dataUri . '"/>';
-    }
+foreach($images as $image){
+    print '<img class="predefined-image" src="' . $image .'"/>';
 }
 ?>
               </div>
