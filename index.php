@@ -105,10 +105,6 @@ fclose($handle);
                       <span class="btn btn-primary glyphicon glyphicon-user" id="d2">Perfil</span>
                       <span class="btn btn-primary glyphicon glyphicon-film" id="d3">Ambas</span>
                   </div>
-                  <div id="group-type" class="btn-group">
-                      <span class="btn btn-primary glyphicon glyphicon-user st active" id="s1">Personal</span>
-                      <span class="btn btn-primary glyphicon glyphicon-flag st" id="s2">Página</span>
-                  </div>
               </div>
           </div>
           <div class="timeline_canvas">
