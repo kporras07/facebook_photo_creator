@@ -11,6 +11,15 @@ foreach($files as $file)
         $images[] = $dataUri;
     }
 }
+$handle = fopen("default/strings.txt", "r");
+$lines = array();
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        $line = substr($line, 0, -1);
+        $lines[] = $line;
+    }
+}
+fclose($handle);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,16 +129,9 @@ foreach($images as $image){
               </div>
               <div class="predefined-texts">
 <?php
-$handle = fopen("default/strings.txt", "r");
-if ($handle) {
-    while (($line = fgets($handle)) !== false) {
-        $line = substr($line, 0, -1);
+foreach($lines as $line){
         print '<span class="predefined-text" data-text="' . $line . '">' . $line . '</span>';
-;
-    }
-} else {
-} 
-fclose($handle);
+}
 ?>
               </div>
           </div>
