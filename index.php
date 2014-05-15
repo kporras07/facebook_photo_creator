@@ -47,7 +47,7 @@ fclose($handle);
   </head>
   <body>
   <div class="main">
-      <h1>Facebook cover and profile picture maker</h1>
+      <h1>Creador de fotos de perfil y biografía para Facebook</h1>
       <div class="toolbars-set app_toolbar main-toolbars">
           <div id="toolbar-main" class="btn-toolbar" role="toolbar">
               <div id="add-buttons" class="btn-group">
