@@ -1,5 +1,14 @@
+@font-face {
+    font-family: Tiki Island;
+    src: url(../fonts/tikiisland/tikiisl.svg);
+    src: url(../fonts/tikiisland/tikiisl.eot);
+    src: url(../fonts/tikiisland/tikiisl.woff);
+}
+.tiki {
+    font-family: Tiki Island;
+}
 .main {
-    max-width: 1200px;
+    max-width: 1100px;
     min-width: 500px;
     margin: 0 auto;
 }
@@ -172,4 +181,27 @@ a.file-input-wrapper:hover {
     border: solid 1px;
     text-align: center;
     padding: .125em;
+}
+div#toolbar-main{
+    background: #323a47;
+}
+span.btn-success{
+    background: #323a47;
+    border: solid 1px #323a47;
+}
+span.btn-success:hover{
+    background: #748f98;
+    border: solid 1px #748f98;
+}
+span.btn-primary{
+    background: #1A78BE;
+}
+span.btn-danger, button.btn-danger{
+    background: #F08801;
+}
+span.btn-danger:hover, button.btn-danger:hover, button.btn-danger:active, button.btn-danger:focus{
+    background: #FF880A;
+}
+span.btn-primary{
+    background: #2E88C7;
 }

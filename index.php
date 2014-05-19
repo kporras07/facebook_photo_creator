@@ -47,7 +47,6 @@ fclose($handle);
   </head>
   <body>
   <div class="main">
-      <h1>Creador de fotos de perfil y biografía para Facebook</h1>
       <div class="toolbars-set app_toolbar main-toolbars">
           <div id="toolbar-main" class="btn-toolbar" role="toolbar">
               <div id="add-buttons" class="btn-group">
@@ -74,6 +73,7 @@ fclose($handle);
               <span class="glyphicon glyphicon-shadow btn tt ot btn-default" id="text_shadow" disabled="disabled">Sombra</span>
               <input type="text" size="12" class="tt ot input-text" name="color2" id="text_text" data-original-title="  Texto  " disabled="disabled">
               <select class="tt ot" name="" id="text_font" data-original-title="Font Family" disabled="disabled"> 
+                  <option style="font-family:'Tiki Island'">Tiki Island</option>
                   <option style="font-family:'Arial'">Arial</option>
                   <option style="font-family: 'Tahoma, Geneva, sans-serif'">Tahoma</option>
                   <option style="font-family:'Times New Roman'">Times New Roman</option>
@@ -99,7 +99,7 @@ fclose($handle);
       </div>
       <div class="preview_timeline">
           <div class="toolbars-set app_toolbar download-toolbar inner-cover_1">
-              <h3 class="download-text">Descargar</h3>
+              <h3 class="download-text tiki">Descargar</h3>
               <div id="toolbar-download" class="btn-toolbar">
                   <div id="group-download" class="btn-group">
                       <span class="btn btn-primary glyphicon glyphicon-picture" id="d1">Portada</span>
@@ -125,7 +125,7 @@ print $images;
               <div class="predefined-texts">
 <?php
 foreach($lines as $line){
-        print '<span class="predefined-text" data-text="' . $line . '">' . $line . '</span>';
+        print '<span class="predefined-text tiki" data-text="' . $line . '">' . $line . '</span>';
 }
 ?>
               </div>

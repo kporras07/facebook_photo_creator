@@ -13,8 +13,8 @@ if(window.localStorage['fpc-canvas']){
     c.loadFromJSON(window.localStorage['fpc-canvas']);
 }
 else{
-    var textSample = new fabric.Text("Add or Drop Image",{
-        fontFamily: "Impact",
+    var textSample = new fabric.Text("Agregue o arrastre imagen",{
+        fontFamily: "Tiki Island",
         left: 425,
         top: 140,
         fontSize: 60,
@@ -110,7 +110,7 @@ $('#remove').click(function(){
 	
 $('#addtext').click(function(){
 	var textObj = new fabric.Text('Texto', { 
-			fontFamily: 'Arial', 
+			fontFamily: 'Tiki Island',
 			left: 425,
 			top: 150,
 			fontSize: 60,
@@ -451,7 +451,7 @@ $('#image_crop').click(function(){
 });
 $('.predefined-text').click(function(){
     var textObj = new fabric.Text($(this).attr('data-text'), {
-        fontFamily: 'Arial',
+        fontFamily: 'Tiki Island',
         left: 425,
         top: 150,
         fontSize: 60,
