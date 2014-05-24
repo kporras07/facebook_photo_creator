@@ -11,10 +11,10 @@ if (!preg_match('/data:([^;]*);base64,(.*)/', $imgstr, $matches)) {
 $content = base64_decode($matches[2]);
 $picture_data = array(
     'profile' => array(
-        'width' => 180,
-        'height' => 180,
-        'x' => 8,
-        'y' => 170,
+        'width' => 160,
+        'height' => 160,
+        'x' => 27,
+        'y' => 197,
     ),
     'cover' => array(
         'width' => 851,
@@ -72,6 +72,12 @@ function generatePicture($filename, $type, $picture_data){
     $result = $image->cropImage($width, $height, $x, $y);
     if(!$result){
         die('Error haciendo el crop');
+    }
+    if($type == 'profile'){
+        $result = $image->resizeImage(180, 180, Imagick::FILTER_LANCZOS, 1);
+        if(!$result){
+            die('Error haciendo resize');
+        }
     }
     $filename = 'files/' . $type . '-' . $filename . '.png';
     $result_write = $image->writeImage('png:' . $filename);
