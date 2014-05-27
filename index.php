@@ -47,6 +47,7 @@ fclose($handle);
   </head>
   <body>
   <div class="main">
+<h1>Diseñá tu portada y perfil de Facebook para el DNJ14</h1>
       <div class="toolbars-set app_toolbar main-toolbars">
           <div id="toolbar-main" class="btn-toolbar" role="toolbar">
               <div id="add-buttons" class="btn-group">
@@ -99,7 +100,7 @@ fclose($handle);
       </div>
       <div class="preview_timeline">
           <div class="toolbars-set app_toolbar download-toolbar inner-cover_1">
-              <h3 class="download-text tiki">Descargar</h3>
+              <h3 class="download-text tiki">Descargá tu diseño</h3>
               <div id="toolbar-download" class="btn-toolbar">
                   <div id="group-download" class="btn-group">
                       <span class="btn btn-primary glyphicon glyphicon-picture" id="d1">Portada</span>
@@ -116,7 +117,7 @@ fclose($handle);
               <button id="crop_cancel" class="btn btn-inverse tt glyphicon glyphicon-remove" type="button" data-original-title="Cancel"></button>
           </div>
           <div class="predefined-content">
-            <h3 class="text-center">Haga click sobre una imagen o un texto para añadirlo al área de trabajo</h3>
+            <h3 class="text-center">Podés usar imágenes de esta galería o subir tus propias fotos</h3>
               <div class="predefined-images">
 <?php
 print $images;
@@ -131,7 +132,7 @@ foreach($lines as $line){
               </div>
           </div>
           <div class="preview_wrap">
-              <h3>Arrastre para ajustar las capas</h3>
+              <h3>Arrastrá las fotos para reordenarlas al frente o atrás</h3>
               <ul id="object_layers" class="ui-sortable">
               </ul>
           </div>
