@@ -100,7 +100,7 @@ fclose($handle);
       </div>
       <div class="preview_timeline">
           <div class="toolbars-set app_toolbar download-toolbar inner-cover_1">
-              <h3 class="download-text tiki">Descargá tu diseño</h3>
+              <h3 class="download-text tiki">Descarga tu foto</h3>
               <div id="toolbar-download" class="btn-toolbar">
                   <div id="group-download" class="btn-group">
                       <span class="btn btn-primary glyphicon glyphicon-picture" id="d1">Portada</span>
